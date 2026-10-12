@@ -1,0 +1,309 @@
+* {
+    box-sizing: border-box;
+}
+
+/* main background of the page (same as the original to-do list) */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #324e6b;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: rgb(57, 106, 134);
+}
+
+
+/* ================= WEATHER SECTION (top, full width) ================= */
+.weather-section {
+    background-color: #d6eaf8;
+    color: #345f88;
+    padding: 25px 40px 30px 40px;
+}
+
+/* title + search bar row */
+.weather-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.weather-top h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #2c3e50;
+}
+
+.weather-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#cityInput {
+    width: 200px;
+    padding: 9px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+.weather-controls button {
+    padding: 9px 14px;
+    background-color: #3498db;
+    color: white;
+}
+
+.weather-controls button:hover {
+    background-color: #2980b9;
+}
+
+#weatherMessage {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* hide the message box when there is no message */
+#weatherMessage:empty {
+    display: none;
+}
+
+/* main weather: left side = temperature, right side = small cards */
+.weather-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.weather-left h2 {
+    margin: 0;
+    font-size: 32px;
+}
+
+#dateText {
+    margin: 4px 0 10px 0;
+    color: #7f8c8d;
+}
+
+.temp-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#iconText {
+    font-size: 64px;
+}
+
+#tempText {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+#conditionText {
+    margin: 5px 0 0 0;
+    font-size: 22px;
+}
+
+#feelsText {
+    margin: 4px 0 0 0;
+    color: #7f8c8d;
+}
+
+.weather-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 540px;
+}
+
+.weather-card {
+    background-color: white;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.card-title {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.card-value {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* ================= TO-DO SECTION (bottom) ================= */
+.todo-section {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #ecf0f1;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.todo-section h2 {
+    margin-top: 0;
+    color: black;
+}
+
+/* weather tip box */
+.tip-box {
+    background-color: #fff8e1;
+    border-left: 5px solid #f39c12;
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #5d4037;
+}
+
+.tip-box p {
+    margin: 0;
+}
+
+.tip-title {
+    font-weight: bold;
+    margin-bottom: 4px !important;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+#addTaskButton {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 15px;
+}
+
+/* tab buttons */
+.tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+#allTasksButton, #completedTasksButton, #pendingTasksButton {
+    background-color: white;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+    padding: 6px 12px;
+}
+
+/* selected tab = blue */
+#allTasksButton.active, #completedTasksButton.active, #pendingTasksButton.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+/* task boxes */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-left: 4px solid #3498db;
+    background: white;
+    border-radius: 5px;
+}
+
+/* completed task box = green */
+li.completed {
+    background-color: #dcf5e3;
+    border-left: 6px solid #28a745;
+}
+
+li span {
+    flex: 1;
+    text-align: left;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.editTaskButton {
+    background-color: #f39c12;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.deleteTaskButton {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+
+/* ================= small screens (mobile) ================= */
+@media (max-width: 700px) {
+    .weather-section {
+        padding: 20px;
+    }
+
+    .weather-controls {
+        width: 100%;
+    }
+
+    #cityInput {
+        width: 100%;
+    }
+
+    .weather-cards {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+    }
+
+    #iconText, #tempText {
+        font-size: 48px;
+    }
+}

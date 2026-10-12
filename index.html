@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== TOP PART: WEATHER (full width) ========== -->
+    <header class="weather-section">
+
+        <div class="weather-top">
+            <h1> Weather </h1>
+
+            <div class="weather-controls">
+                <input type="text" id="cityInput" placeholder="Search city...">
+                <button id="getWeatherButton">Search</button>
+                <button id="locationButton"> My Location</button>
+                <button id="unitButton">Switch to °F</button>
+            </div>
+        </div>
+
+        <!-- loading / error messages come here -->
+        <p id="weatherMessage">Loading weather...</p>
+
+        <!-- weather details (hidden until the data is loaded) -->
+        <div id="weatherContent" class="hidden">
+            <div class="weather-main">
+
+                <div class="weather-left">
+                    <h2 id="cityName"></h2>
+                    <p id="dateText"></p>
+                    <div class="temp-row">
+                        <span id="iconText"></span>
+                        <span id="tempText"></span>
+                    </div>
+                    <p id="conditionText"></p>
+                    <p id="feelsText"></p>
+                </div>
+
+                <div class="weather-cards">
+                    <div class="weather-card">
+                        <p class="card-title">💧 Humidity</p>
+                        <p class="card-value" id="humidityText"></p>
+                    </div>
+                    <div class="weather-card">
+                        <p class="card-title">💨 Wind</p>
+                        <p class="card-value" id="windText"></p>
+                    </div>
+                    <div class="weather-card">
+                        <p class="card-title">☔ Rain Chance</p>
+                        <p class="card-value" id="rainText"></p>
+                    </div>
+                    <div class="weather-card">
+                        <p class="card-title">🔆 UV Index</p>
+                        <p class="card-value" id="uvText"></p>
+                    </div>
+                    <div class="weather-card">
+                        <p class="card-title">🌅 Sunrise</p>
+                        <p class="card-value" id="sunriseText"></p>
+                    </div>
+                    <div class="weather-card">
+                        <p class="card-title">🌇 Sunset</p>
+                        <p class="card-value" id="sunsetText"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ========== BOTTOM PART: TO-DO LIST ========== -->
+    <main class="todo-section">
+        <h2>My To-Do List</h2>
+
+        <!-- tip based on the weather -->
+        <div class="tip-box">
+            <p class="tip-title">Today's weather tip</p>
+            <p id="weatherTip">Loading tip...</p>
+        </div>
+
+        <!-- add task input -->
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button id="addTaskButton">Add Task</button>
+        </div>
+
+        <!-- buttons to show different tasks -->
+        <div class="tabs">
+            <button id="allTasksButton" class="active">All Tasks</button>
+            <button id="completedTasksButton">Completed Tasks</button>
+            <button id="pendingTasksButton">Pending Tasks</button>
+        </div>
+
+        <!-- task list -->
+        <ul id="taskList"></ul>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="weather.js"></script>
+</body>
+</html>
